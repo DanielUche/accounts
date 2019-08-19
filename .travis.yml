@@ -12,18 +12,16 @@ before_install:
   - export PATH=$PATH:$HOME/.local/bin
 install:
   - npm install
-# before_script:
-#   - npm run lint
-# script:
-#   - npm run test
 deploy:
-  # Production Deploy if we push to master
   - provider: script
-    script: ./bin/deploy_production.sh
+    script: './bin/deploy_production.sh'
     on:
       branch: master
-  # Develop Deploy if we push to develop
   - provider: script
-    script: ./bin/deploy_develop.sh
+    script: './bin/deploy_develop.sh'
     on:
       branch: develop
+env:
+  global:
+    - secure: ZQNG/fqLHI6pCdZoocp1u63uDqyHztxyFlD+XzXpNnEad6cw1jiPQKLQUoW/s0kMOEQU0+wcni/OojgSdMniJHE7JlhQshOn78+fcAtplMvi4FtHaEeLNudYMlg9BxswAYW5D45E3QKNlP6EAcvtQxl1vEgN7xoTZckDCNk1eBhA8wNFbUi4JKReRvko1DsxCSJTQP8vu/zuokdbLUZ+ueb364RgYAQjcJmuJQxah0svdGsAN3Bsga1ZGWL7JmosSt9oBBr/TLxaCEMqq1ov2mmtBKp07C5I21bkFy0g2cRQrkHXcJ1RGHTrP5E6tQt9ecJYMGKV5ejaELS0upW4ggcUTk5Qx+drG9BGPYiVqAz+8DxfkwkiLQyI4LKqOQ3WxOXeP+3MQ+BkBMLa2saYiwXlQTGUwX87vzmecTwvkmZerrRANTyZ38L7WEAWhLDy3sF6YW8ysC00lWYrwmszS/nak0ewOuUfx5Cxqdebu3kpYeXaSXPgENR7YH/+DJWU9pIzqZlkVequJO2BvThna9pzeMZ651jkiOUIg4WVEA7lTi9n1ZBEyRZBxMnWgNCMhwLh6+jJL5FeccpvW+OaLXr/T+5QcvuEwwVMzZiBtmIrmn57+R5bv8XFKoj8yeEofGmndiqMQvVKtWvOLsHpkVyvoNkCstjXPfbXokaMn9k=
+    - secure: izCCT2PFOuGzv7OCS0wksLQcYOVyXsNgHHBRMsjzCavBjN9zMcRGZ/iB84gLlAEh95MELar1FXughGKMBBeIXTTK48lhmyijSYHbJIvaQW2Y1UXm6b1a3aKBr2/vj5kWmSyyP8Y8oX0GhCicwNOFElx9K1ZpTo+Nz8O7+1LALBjE+ZiOm/WYb0vSN+WqaRG49zFPyjn++6gSFpfiQbT2GtbL2ZfZb563w3msgQSkeX5EgI4eSTDUG3qmqhxk+8ShSf5Odr8p4OcD1CnorTa8ZJq6zBWRjBUmjU/6Hx92IoTMQrcnGSPCNvD0gc4+7Ya9uB96J7zxBZ6wYsp7vYADjCVOBQDE1WP/12zE9f4oICp6yQqaQLlTY+KwNUco8DsPcYg9/FUTyCE54ahcIujwTon2/wO8xy96NOxgmRFHvGXwZCZMpL2ZwaZYttqQljDup6H0+B3G0uyeT1VwH2QxN1FzRoj+PGvVl0CNc7T230cUL1nSFp0Zgf/2rBV6bk73LNKcHjfeKmH6bLmV9i5HymvBpt0rH3evlNKPq1SevnkyG/2QUjIR3dfZopL3i7PGcBCE0lBBXqDVNFVrRNVWHGOZrr178MRlVU/aHWDzteBFdYDICw2xsuk1fY8DusdiOCLOwsPa8DoAVyyMyf6tG/3mAbGQl0KkUIOqsgibb10=
